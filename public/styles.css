@@ -1,0 +1,219 @@
+/* CSS Variables */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --grey-color: #95a5a6;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+    direction: rtl;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--grey-color);
+}
+
+/* Main Content Styles */
+main {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+/* URL Form Styles */
+.url-form {
+    margin-bottom: 30px;
+}
+
+#url-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#url-input {
+    padding: 15px;
+    border: 2px solid var(--light-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+#url-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#shorten-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#shorten-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Result Container Styles */
+.result-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.result-container h2 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.result-url {
+    display: flex;
+    gap: 10px;
+}
+
+#short-url {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid var(--light-color);
+    border-radius: 5px;
+    background-color: white;
+    font-family: monospace;
+}
+
+#copy-btn {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#copy-btn:hover {
+    background-color: #27ae60;
+}
+
+.copy-message {
+    color: var(--success-color);
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Stats Container Styles */
+.stats-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.stats-container h2 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-color);
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    font-weight: 500;
+}
+
+.stat-value {
+    color: var(--primary-color);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--grey-color);
+    font-size: 0.9rem;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    #url-form {
+        flex-direction: row;
+    }
+
+    .stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        flex: 1 0 45%;
+    }
+}
+
+@media (min-width: 992px) {
+    .stat-item {
+        flex: 1 0 30%;
+    }
+}
